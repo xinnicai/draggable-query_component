@@ -28,13 +28,13 @@
     </div>
     <div class="col-9">
       <h3>组件配置页面展示</h3>
-      <draggable
+      <!-- <draggable
         tag="el-collapse"
         class="dragArea list-group"
         :list="list2"
         group="comp"
         @change="log"
-      >
+      > -->
         <slot v-bind="vqbProps">
           <query-builder-group
             v-bind="vqbProps"
@@ -56,7 +56,7 @@
             <div>{{ element.label }}</div>
           </el-collapse-item>
         </el-collapse> -->
-      </draggable>
+      <!-- </draggable> -->
     </div>
 
     
