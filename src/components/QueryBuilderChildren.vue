@@ -56,13 +56,15 @@ export default {
     log: function(evt) {
       console.log(evt);
       if (evt.added) {
-        this.count += 1;  
+        this.count += 1;
         const item = { "type": "query-builder-rule", "query": evt.added.element };
         const idx = this.query.children.findIndex(e => e.id === item.query.id);
         let temp = JSON.parse(JSON.stringify(this.query.children));
         temp[idx]=item
-        temp[idx].id = this.count;
+        // temp[idx].id = this.count;
         this.query.children=temp
+        debugger
+        console.log("rules----------------"+this.query.children)
       }
     },
   }

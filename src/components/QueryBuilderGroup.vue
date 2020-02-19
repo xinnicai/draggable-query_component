@@ -37,7 +37,6 @@ export default {
   methods: {
     ruleById (ruleId) {
       var rule = null;
-
       this.rules.forEach(function(value){
         if ( value.id === ruleId ) {
           rule = value;

@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <div class="vqb-rule card">
+  <div class="vqb-rule card" style="margin-bottom:10px">
     <div class="form-inline">
 
 
@@ -8,9 +8,10 @@
       <el-col :span="9">
           <el-cascader
               v-model="query.id"
-              :options="rules"
+              :options="rules "
               @change="handleChange"
-              :props="{ checkStrictly: false , value:'id',emitPath:false}">
+              clearable
+              :props="{ checkStrictly: false , value:'id',label: 'label',emitPath:false}">
           </el-cascader>
       </el-col>
       <el-col :span="6">
