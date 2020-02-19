@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-3">
       <h3>可用组件列表</h3>
-      <draggable :list="data" :options="{ forceFallback: true }" :group="{ name: 'comp', pull: 'clone', put: false }" @change="log" >
-        <div class="firstLevel" v-for="item in data" :key="item.id">
+      <draggable :list="rules" :options="{ forceFallback: true }" :group="{ name: 'comp', pull: 'clone', put: false }" @change="log" >
+        <div class="firstLevel" v-for="item in rules" :key="item.id">
             <div class="leverFirst">
-              <span class="treeExpandBtn" @click.stop="toggleNode(item)" :class="{expanded:item.expand && item.children,btnclose:!item.expand && item.children,line: !item.last && !item.children,lastLine:item.last&&!item.children}"><span class="tree-icon" :class="item.icon"></span> </span>     
+              <span class="treeExpandBtn" @click.stop="toggleNode(item)" :class="{expanded:item.expand && item.children,btnclose:!item.expand && item.children,line: !item.last && !item.children,lastLine:item.last&&!item.children}"><span class="tree-icon" :class="item.icon"></span> </span>
               <span >{{item.label}}</span>
             </div>
           <draggable :list="item.children" v-if="item.expand" :options="{ forceFallback: true }" :group="{ name: 'comp', pull: 'clone', put: false }" @change="log" >
             <div class="SecondLevel" v-for="it in item.children" :key="it.id">
               <div class="leverSecond">
-                <span class="treeExpandBtn" @click.stop="toggleNode(it)" :class="{expanded:it.expand && it.children,btnclose:!it.expand && it.children,line: !it.last && !it.children,lastLine:it.last&&!it.children}"><span class="tree-icon" :class="it.icon"></span> </span>     
+                <span class="treeExpandBtn" @click.stop="toggleNode(it)" :class="{expanded:it.expand && it.children,btnclose:!it.expand && it.children,line: !it.last && !it.children,lastLine:it.last&&!it.children}"><span class="tree-icon" :class="it.icon"></span> </span>
                 <span >{{it.label}}</span>
               </div>
               <draggable :list="it.children" v-if="it.expand" :options="{ forceFallback: true }" :group="{ name: 'comp', pull: 'clone', put: false }" @change="log" >
@@ -59,7 +59,7 @@
       <!-- </draggable> -->
     </div>
 
-    
+
   </div>
 </template>
 
@@ -268,7 +268,7 @@ export default {
 						datas.forEach( (m,index)  => {
 							if(expandInit){
                 self.$set(m,'expand',true);
-                
+
 							}
 							if(activeInit){
 								self.$set(m,'active',false);
@@ -283,7 +283,7 @@ export default {
 						});
 					}
 				}
-        modifyDataFun(this.data);
+        modifyDataFun(this.rules);
     },
     log: function(evt) {
       console.log(evt);

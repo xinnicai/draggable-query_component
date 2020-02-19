@@ -10,7 +10,7 @@
   ></vue-query-builder>
   </div>
   {{ query }}
-  
+
 </div>
 </template>
 
@@ -37,26 +37,36 @@ export default {
       rules: [
     {
         type: "text",
-        id: "vegetable",
-        label: "蔬菜",
+        id: "dataset1",
+        label: "数据集1",
         children: [{
             type: "text",
-            id: 'nangua',
-            label: '南瓜',
+            id: 'dataset1_data1',
+            label: '字段1',
         },
         {
             type: "text",
-            id: 'qingcai',
-            label: '青菜',
+            id: 'dataset1_data2',
+            label: '字段2',
         },
             ]
     },
-    {
-        type: "text",
-        id: "fruit",
-        label: "水果",
-
-    },
+        {
+          type: "text",
+          id: "dataset2",
+          label: "数据集2",
+          children: [{
+            type: "text",
+            id: 'dataset2_data1',
+            label: '字段1',
+          },
+            {
+              type: "text",
+              id: 'dataset2_data2',
+              label: '字段2',
+            },
+          ]
+        },
 ]
     }
   }

@@ -7,18 +7,18 @@
     <el-row :gutter="20">
       <el-col :span="9">
           <el-cascader
-              v-model="query.rule"
+              v-model="query.id"
               :options="rules"
               @change="handleChange"
-              :props="{ checkStrictly: false , value:'id',emitPath:true}">
-          </el-cascader>     
+              :props="{ checkStrictly: false , value:'id',emitPath:false}">
+          </el-cascader>
       </el-col>
       <el-col :span="6">
           <el-select v-model="query.operator" placeholder="请选择">
               <el-option
                 v-for="operator in operators"
                 :key="operator"
-                :value="operator" 
+                :value="operator"
                 :label="operator"
                 >
               </el-option>
@@ -41,7 +41,7 @@
 
     </div>
   </div>
-  
+
 </template>
 
 <script>
