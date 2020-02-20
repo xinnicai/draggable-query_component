@@ -233,7 +233,7 @@ export default {
 							}
 						});
 					}
-				}
+        }
         modifyDataFun(this.rules);
     },
     log: function(evt) {

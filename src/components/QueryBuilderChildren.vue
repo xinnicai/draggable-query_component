@@ -63,8 +63,6 @@ export default {
         temp[idx]=item
         // temp[idx].id = this.count;
         this.query.children=temp
-        debugger
-        console.log("rules----------------"+this.query.children)
       }
     },
   }

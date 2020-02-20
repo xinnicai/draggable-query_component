@@ -24,7 +24,7 @@ export default {
   },
 
   mounted () {
-    let updated_query = deepClone(this.query);
+    // let updated_query = deepClone(this.query);
 
     // Set a default value for these types if one isn't provided already
 
@@ -58,7 +58,6 @@ export default {
         this.$nextTick(function(){
           this.$emit('update:query', updated_query);
         });
-      
     }
   }
 }
